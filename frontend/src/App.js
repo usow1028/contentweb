@@ -8,9 +8,10 @@ import { useAuth } from './context/AuthContext';
 
 const App = () => {
   const { user, logout } = useAuth();
+  const themeClass = user ? (user.team === 'AI' ? 'theme-ai' : 'theme-human') : 'theme-neutral';
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${themeClass}`}>
       <header className="app-header">
         <h1>AI vs Human</h1>
         <nav>
@@ -18,7 +19,12 @@ const App = () => {
           <Link to="/results">Weekly Results</Link>
           {user ? (
             <>
-              <span className="welcome">Welcome, {user.username} ({user.team})</span>
+              <span className="welcome">
+                Welcome, {user.username}
+                <span className={`team-badge ${user.team === 'AI' ? 'badge-ai' : 'badge-human'}`}>
+                  TEAM {user.team}
+                </span>
+              </span>
               <button type="button" onClick={logout}>
                 Logout
               </button>
