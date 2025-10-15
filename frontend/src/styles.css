@@ -1,0 +1,268 @@
+body {
+  margin: 0;
+  font-family: 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0d1117;
+  color: #f5f7ff;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-gradient, linear-gradient(135deg, #1f2937, #111827));
+  color: var(--text-primary, #f5f7ff);
+  transition: background 0.6s ease, color 0.4s ease;
+}
+
+.app-container main {
+  flex: 1;
+  width: min(1100px, 90%);
+  margin: 2rem auto 4rem;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 8%;
+  background: var(--header-bg, rgba(17, 24, 39, 0.8));
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.app-header nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.app-header a {
+  color: var(--link-color, #d1e4ff);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.app-header a:hover {
+  transform: translateY(-1px);
+  background: var(--link-hover-bg, rgba(255, 255, 255, 0.15));
+}
+
+.app-header button {
+  border: none;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--button-bg, rgba(255, 255, 255, 0.12));
+  color: var(--button-text, inherit);
+  transition: transform 0.25s ease, background 0.3s ease;
+}
+
+.app-header button:hover {
+  transform: translateY(-1px);
+  background: var(--button-hover-bg, rgba(255, 255, 255, 0.22));
+}
+
+.welcome {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.team-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  text-transform: uppercase;
+}
+
+.badge-ai {
+  color: #67e8f9;
+  box-shadow: 0 0 10px rgba(103, 232, 249, 0.45);
+}
+
+.badge-human {
+  color: #fbcfe8;
+  box-shadow: 0 0 10px rgba(251, 207, 232, 0.45);
+}
+
+.main-page h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+}
+
+.submission-card,
+.submission-form {
+  background: var(--card-bg, rgba(15, 23, 42, 0.6));
+  border: 1px solid var(--card-border, rgba(148, 163, 184, 0.25));
+  border-radius: 18px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.3);
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submission-card:hover,
+.submission-form:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.4);
+}
+
+.submission-card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.submission-card .category {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-text, rgba(226, 232, 240, 0.65));
+  margin-bottom: 0.9rem;
+}
+
+.submission-card .content-text {
+  background: rgba(15, 23, 42, 0.35);
+  padding: 0.75rem;
+  border-radius: 12px;
+  font-family: 'Fira Code', 'Noto Sans KR', monospace;
+  white-space: pre-wrap;
+}
+
+.submission-card .vote-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.submission-card select,
+.submission-form select,
+.submission-form input,
+.submission-form textarea {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--input-border, rgba(148, 163, 184, 0.4));
+  border-radius: 12px;
+  padding: 0.65rem 0.8rem;
+  color: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.submission-card button,
+.submission-form button {
+  border: none;
+  border-radius: 12px;
+  padding: 0.65rem 1.2rem;
+  font-weight: 600;
+  background: var(--accent, #38bdf8);
+  color: var(--button-contrast, #020617);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+
+.submission-card button:hover,
+.submission-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 25px rgba(56, 189, 248, 0.4);
+}
+
+.submission-form label {
+  display: block;
+  margin: 1rem 0 0.4rem;
+  font-weight: 600;
+}
+
+.error {
+  color: #f87171;
+  margin: 0.6rem 0;
+}
+
+.votes {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--muted-text, rgba(226, 232, 240, 0.65));
+}
+
+.theme-neutral {
+  --bg-gradient: linear-gradient(135deg, #1f2937, #0f172a);
+  --header-bg: rgba(15, 23, 42, 0.75);
+  --link-color: #dbeafe;
+  --link-hover-bg: rgba(191, 219, 254, 0.18);
+  --button-bg: rgba(191, 219, 254, 0.18);
+  --button-hover-bg: rgba(191, 219, 254, 0.3);
+  --card-bg: rgba(15, 23, 42, 0.7);
+  --card-border: rgba(148, 163, 184, 0.35);
+  --accent: #38bdf8;
+  --button-contrast: #020617;
+  --muted-text: rgba(226, 232, 240, 0.7);
+}
+
+.theme-ai {
+  --bg-gradient: radial-gradient(circle at top, rgba(34, 211, 238, 0.25), rgba(59, 130, 246, 0.05) 40%, #020617 75%);
+  --header-bg: linear-gradient(90deg, rgba(8, 47, 73, 0.92), rgba(15, 23, 42, 0.85));
+  --link-color: #67e8f9;
+  --link-hover-bg: rgba(103, 232, 249, 0.18);
+  --button-bg: rgba(103, 232, 249, 0.16);
+  --button-hover-bg: rgba(103, 232, 249, 0.3);
+  --card-bg: rgba(15, 23, 42, 0.75);
+  --card-border: rgba(56, 189, 248, 0.4);
+  --accent: #22d3ee;
+  --button-contrast: #031120;
+  --muted-text: rgba(148, 210, 255, 0.7);
+  --input-border: rgba(34, 211, 238, 0.45);
+}
+
+.theme-human {
+  --bg-gradient: linear-gradient(145deg, rgba(254, 215, 170, 0.45), rgba(244, 114, 182, 0.25), #1f2937 75%);
+  --header-bg: linear-gradient(90deg, rgba(124, 58, 237, 0.85), rgba(236, 72, 153, 0.8));
+  --link-color: #ffe4e6;
+  --link-hover-bg: rgba(255, 228, 230, 0.2);
+  --button-bg: rgba(253, 164, 175, 0.2);
+  --button-hover-bg: rgba(253, 164, 175, 0.35);
+  --card-bg: rgba(30, 41, 59, 0.7);
+  --card-border: rgba(251, 191, 36, 0.4);
+  --accent: #fb7185;
+  --button-contrast: #2f0d14;
+  --muted-text: rgba(255, 241, 242, 0.7);
+  --input-border: rgba(251, 191, 36, 0.4);
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .app-container main {
+    width: min(95%, 680px);
+    margin-top: 1.5rem;
+  }
+
+  .submission-card,
+  .submission-form {
+    padding: 1.2rem;
+  }
+}
