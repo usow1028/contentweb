@@ -10,7 +10,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.[jt]sx?$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader'
@@ -23,19 +23,13 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx']
+    extensions: ['.js', '.jsx']
   },
   devServer: {
     historyApiFallback: true,
     static: {
       directory: path.join(__dirname, 'public')
     },
-    port: 3000,
-    proxy: {
-      '/api': {
-        target: 'http://127.0.0.1:8000',
-        changeOrigin: true
-      }
-    }
+    port: 3000
   }
 };

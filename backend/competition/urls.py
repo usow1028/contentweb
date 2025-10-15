@@ -4,7 +4,6 @@ from .views import (
     LoginView,
     LogoutView,
     MeView,
-    PingView,
     RegisterView,
     SubmissionDetailView,
     SubmissionListCreateView,
@@ -13,7 +12,6 @@ from .views import (
 )
 
 urlpatterns = [
-    path('ping/', PingView.as_view(), name='ping'),
     path('register/', RegisterView.as_view(), name='register'),
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),

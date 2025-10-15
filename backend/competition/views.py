@@ -20,13 +20,6 @@ from .serializers import (
 User = get_user_model()
 
 
-class PingView(APIView):
-    permission_classes = [permissions.AllowAny]
-
-    def get(self, request, *args, **kwargs):
-        return Response({'ok': True})
-
-
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegisterSerializer

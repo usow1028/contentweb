@@ -13,7 +13,7 @@ AI vs Human 플랫폼은 사용자가 AI가 만든 콘텐츠와 사람이 만든
 ### 환경 준비
 1. 가상환경을 생성하고 필요한 패키지를 설치합니다.
    ```bash
-   pip install django djangorestframework django-cors-headers
+   pip install django djangorestframework
    ```
 2. 데이터베이스 마이그레이션과 관리자 계정을 생성합니다.
    ```bash
@@ -41,6 +41,7 @@ python backend/manage.py compute_weekly_results
    ```
 2. 개발 서버를 실행합니다.
    ```bash
-   npm run dev
+   npm start
    ```
-프론트엔드 개발 서버는 `/api` 요청을 `http://127.0.0.1:8000`으로 프록시하여 Django API와 연동되며, `/api/ping` 엔드포인트로 연결 상태를 확인할 수 있습니다.
+
+프론트엔드 애플리케이션은 Django API가 `/api/` 경로에 노출되어 있다고 가정합니다.

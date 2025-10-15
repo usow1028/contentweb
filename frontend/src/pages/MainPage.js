@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import SubmissionCard from '../components/SubmissionCard';
 import { createSubmission, fetchSubmissions } from '../services/api';
 import { useAuth } from '../context/AuthContext';
-import TestButton from '../TestButton';
 
 const categories = [
   { value: 'IMAGE', label: 'Image' },
@@ -82,7 +81,6 @@ const MainPage = () => {
   return (
     <section className="main-page">
       <h2>Featured Submissions</h2>
-      <TestButton />
       {error && <p className="error">{error}</p>}
       {loading ? <p>Loading...</p> : submissions.map((submission) => (
         <SubmissionCard key={submission.id} submission={submission} onVoted={loadSubmissions} />
